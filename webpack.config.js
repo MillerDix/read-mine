@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtensionReloader = require('webpack-extension-reloader');
 
 module.exports = {
   // entry: './src/main.tsx',
@@ -41,7 +42,26 @@ module.exports = {
     port: 8000
   },
   devtool: 'inline-source-map',
+
+  // {
+  //   port: 9090, // Which port use to create the server
+  //   reloadPage: true, // Force the reload of the page also
+  //   entries: { // The entries used for the content/background scripts or extension pages
+  //     contentScript: 'content-script',
+  //     background: 'background',
+  //     extensionPage: 'popup',
+  //   }
+  // }
   plugins: [
+    new ExtensionReloader({
+      port: 9090, // Which port use to create the server
+      reloadPage: true, // Force the reload of the page also
+      entries: { // The entries used for the content/background scripts or extension pages
+        contentScript: 'content/content',
+        background: 'background/background',
+        extensionPage: 'popup/popup',
+      }
+    }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
@@ -50,15 +70,17 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       inject: true,
+      cache: false,
       chunks: ['content/content'],
       filename: 'content/content.html',
       template: './public/index.html'
     }),
     new HtmlWebPackPlugin({
       inject: true,
+      cache: false,
       chunks: ['popup/popup'],
       filename: 'popup/popup.html',
       template: './public/index.html'
-    })
+    }),
   ]
 };

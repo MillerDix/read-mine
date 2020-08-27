@@ -19,7 +19,7 @@ class Popup extends Component<PopupProps, PopupState> {
     state: PopupState = {};
 
     render() {
-        return <div>react typescript webpack babel<Login /></div>
+        return <div>react webasdfpack bdddabel<Login /></div>
     }
 }
 

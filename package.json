@@ -4,7 +4,7 @@
   "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --config webpack.config.js --mode development"
+    "dev": "NODE_ENV=development webpack --config webpack.config.js --mode development --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -20,7 +20,8 @@
     "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-extension-reloader": "^1.1.4"
   },
   "dependencies": {
     "@types/jest": "^26.0.10",

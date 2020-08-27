@@ -4,3 +4,5 @@ chrome.runtime.onInstalled.addListener(function () {
         onclick: () => console.log('save to read-mine triggered')
     })
 });
+
+console.log('a');
