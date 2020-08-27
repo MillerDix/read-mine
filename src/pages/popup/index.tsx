@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
+import Login from './login/index';
+
 interface PopupProps {
 
 }
@@ -17,7 +19,7 @@ class Popup extends Component<PopupProps, PopupState> {
     state: PopupState = {};
 
     render() {
-        return <div>react typescript webpack babel</div>
+        return <div>react typescript webpack babel<Login /></div>
     }
 }
 

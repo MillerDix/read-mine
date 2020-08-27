@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-
+import Login from './login/index';
 
 interface BackgroundPropsType {
 
@@ -24,7 +24,10 @@ class Background extends Component<BackgroundPropsType, BackgroundStateType> {
 
     render() {
         return (
-            <div>background has the floor</div>
+            <div>
+                background has the floor
+                <Login />
+            </div>
         );
     }
 }
