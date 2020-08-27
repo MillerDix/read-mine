@@ -5,4 +5,4 @@ chrome.runtime.onInstalled.addListener(function () {
     })
 });
 
-console.log('a');
+console.log('ab');

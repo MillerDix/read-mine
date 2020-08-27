@@ -3,6 +3,8 @@ import ReactDom from 'react-dom';
 
 import Login from './login/index';
 
+import styles from './index.module.scss';
+
 interface PopupProps {
 
 }
@@ -18,8 +20,8 @@ class Popup extends Component<PopupProps, PopupState> {
 
     state: PopupState = {};
 
-    render() {
-        return <div>react webasdfpack bdddabel<Login /></div>
+    render() {  
+        return <div className={styles.test}>react webasdfpack bdddabel<Login /></div>
     }
 }
 

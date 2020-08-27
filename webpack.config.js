@@ -3,6 +3,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtensionReloader = require('webpack-extension-reloader');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   // entry: './src/main.tsx',
@@ -21,6 +22,21 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          }, {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }, {
+            loader: 'sass-loader'
+          }
+        ],
+      },
       {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
@@ -67,6 +83,10 @@ module.exports = {
       patterns: [
         { from: 'manifest.json', to: 'manifest.json' }
       ]
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     }),
     new HtmlWebPackPlugin({
       inject: true,
