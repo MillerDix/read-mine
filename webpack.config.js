@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   // entry: './src/main.tsx',
   entry: {
-    'background/background': './src/pages/background/index.tsx',
+    'background/background': './src/pages/background/background.ts',
     'content/content': './src/pages/content/index.tsx',
     'popup/popup': './src/pages/popup/index.tsx',
   },
@@ -47,12 +47,6 @@ module.exports = {
       patterns: [
         { from: 'manifest.json', to: 'manifest.json' }
       ]
-    }),
-    new HtmlWebPackPlugin({
-      inject: true,
-      chunks: ['background/background'],
-      filename: 'background/background.html',
-      template: './public/index.html'
     }),
     new HtmlWebPackPlugin({
       inject: true,
