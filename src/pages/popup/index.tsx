@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDom from 'react-dom';
 
 interface PopupProps {
 
@@ -20,4 +21,4 @@ class Popup extends Component<PopupProps, PopupState> {
     }
 }
 
-export default Popup;
+ReactDom.render(<Popup />, document.getElementById('root'));

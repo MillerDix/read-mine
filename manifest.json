@@ -2,5 +2,12 @@
     "name": "React App",
     "description": "React App",
     "manifest_version": 2,
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "background": {
+      "page": "background/background.html",
+      "persistent": true
+    },
+    "browser_action": {
+      "default_popup": "popup/popup.html"
+    }
   }
