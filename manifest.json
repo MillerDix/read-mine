@@ -11,6 +11,10 @@
       "default_popup": "popup/popup.html"
     },
     "permissions": [
-      "contextMenus"
+      "contextMenus",
+      "activeTab",
+      "tabs",
+      "storage",
+      "https://*/*"
     ]
   }

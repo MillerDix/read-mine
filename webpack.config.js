@@ -9,7 +9,7 @@ module.exports = {
   // entry: './src/main.tsx',
   entry: {
     'background/background': './src/pages/background/background.ts',
-    'content/content': './src/pages/content/index.tsx',
+    'content/content': './src/pages/content/index.ts',
     'popup/popup': './src/pages/popup/index.tsx',
   },
   output: {
